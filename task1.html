@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll and Hover Animation</title>
+<style>
+    /* body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        /* overflow-x: hidden;  */
+     */
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+        height: 300px;
+        padding: 30px;
+    }
+
+    .box {
+        flex: 0 0 30%;
+        height: 100%;
+        background-color: #ccc;
+        transition: all 0.3s ease;
+    }
+
+    .box:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row" id="row1">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+    <div class="row" id="row2">
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+        <div class="box">Box 6</div>
+    </div>
+    <div class="row" id="row3">
+      <div class="box">Box 7</div>
+      <div class="box">Box 8</div>
+      <div class="box">Box 9</div>
+  </div>
+  <div class="row" id="row4">
+    <div class="box">Box 10</div>
+    <div class="box">Box 11</div>
+    <div class="box">Box 12</div>
+</div>
+</div>
+
+<script>
+    window.addEventListener("scroll", function() {
+        let row1 = document.getElementById("row1");
+        let row2 = document.getElementById("row2");
+        let row3 = document.getElementById("row3");
+        let row4 = document.getElementById("row4");
+        let scrolled = window.scrollY;
+
+        row1.style.transform = "translateX(" + (scrolled / 2) + "px)";
+        row2.style.transform = "translateX(" + (scrolled / 2) + "px)";
+        row3.style.transform = "translateX(" + (scrolled / 2) + "px)";
+        row4.style.transform = "translateX(" + (scrolled / 2) + "px)";
+    });
+</script>
+
+</body>
+</html>
